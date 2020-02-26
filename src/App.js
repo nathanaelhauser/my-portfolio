@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +21,7 @@ import {
 } from './pages'
 import NavBar from './components/NavBar'
 import ContactBar from './components/ContactBar'
+import PagesContext from './utils/PagesContext'
 import './assets/fonts/fonts.css'
 // import logo from './logo.svg'
 
@@ -66,33 +67,44 @@ const useStyles = makeStyles(theme => ({
 
 const App = () => {
   const classes = useStyles()
+  const [pagesState, setPagesState] = useState({
+    homeVisited: false,
+    aboutVisited: false,
+    portfolioVisited: false
+  })
+
+  pagesState.toggleHome = () => setPagesState({ ...pagesState, homeVisited: !pagesState.homeVisited })
+  pagesState.toggleAbout = () => setPagesState({ ...pagesState, aboutVisited: !pagesState.aboutVisited })
+  pagesState.togglePortfolio = () => setPagesState({ ...pagesState, portfolioVisited: !pagesState.portfolioVisited })
 
   return (
     <MuiThemeProvider theme={theme}>
-      <Router>
-        <div>
-          <CssBaseline />
-          <NavBar />
-          <Grid container direction="row" className={classes.fullHeight}>
-            <Grid container item xs={1} sm={1} direction="column" justify="center" alignContent="center">
-              <ContactBar />
+      <PagesContext.Provider value={pagesState}>
+        <Router>
+          <div>
+            <CssBaseline />
+            <NavBar />
+            <Grid container direction="row" className={classes.fullHeight}>
+              <Grid container item xs={1} sm={1} direction="column" justify="center" alignContent="center">
+                <ContactBar />
+              </Grid>
+              <Grid item xs={11} sm={11}>
+                <Switch>
+                  <Route path="/about">
+                    <About />
+                  </Route>
+                  <Route path="/portfolio">
+                    <Portfolio />
+                  </Route>
+                  <Route exact path="/">
+                    <Home />
+                  </Route>
+                </Switch>
+              </Grid>
             </Grid>
-            <Grid item xs={11} sm={11}>
-              <Switch>
-                <Route path="/about">
-                  <About />
-                </Route>
-                <Route path="/portfolio">
-                  <Portfolio />
-                </Route>
-                <Route exact path="/">
-                  <Home />
-                </Route>
-              </Switch>
-            </Grid>
-          </Grid>
-        </div>
-      </Router>
+          </div>
+        </Router>
+      </PagesContext.Provider>
     </MuiThemeProvider>
   )
 }

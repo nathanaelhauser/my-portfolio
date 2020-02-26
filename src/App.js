@@ -82,12 +82,22 @@ const App = () => {
       <PagesContext.Provider value={pagesState}>
         <Router>
           <div>
+
+            {/* Ensure theme is initially loaded. */}
             <CssBaseline />
+
+            {/* Top navbar  */}
             <NavBar />
+
+            {/* Grid used so pages and Contact Bar don't overlap on smaller devices. */ }
             <Grid container direction="row" className={classes.fullHeight}>
+
+              {/* Contact Bar */}
               <Grid container item xs={1} sm={1} direction="column" justify="center" alignContent="center">
                 <ContactBar />
               </Grid>
+
+              {/* Pages */}
               <Grid item xs={11} sm={11}>
                 <Switch>
                   <Route path="/about">
@@ -101,7 +111,9 @@ const App = () => {
                   </Route>
                 </Switch>
               </Grid>
+
             </Grid>
+
           </div>
         </Router>
       </PagesContext.Provider>

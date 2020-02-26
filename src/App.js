@@ -4,20 +4,21 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import { 
+import {
   createMuiTheme,
-  MuiThemeProvider
+  MuiThemeProvider,
+  makeStyles
 } from '@material-ui/core/styles'
 import {
-  Typography,
-  AppBar,
-  CssBaseline
+  CssBaseline,
+  Grid
 } from '@material-ui/core'
 import {
   About,
   Home,
   Portfolio
 } from './pages'
+import ContactBar from './components/ContactBar'
 import './assets/fonts/fonts.css'
 // import logo from './logo.svg'
 
@@ -32,7 +33,7 @@ const theme = createMuiTheme({
       contrastText: '#F7F0F0'
     },
     secondary: {
-      main: '#109648',
+      main: '#18A999',
       contrastText: '#F7F0F0'
     },
     error: {
@@ -50,13 +51,28 @@ const theme = createMuiTheme({
   }
 })
 
+const useStyles = makeStyles(theme => ({
+  fullHeight: {
+    height: '-webkit-fill-available'
+  }
+}))
+
 const App = () => {
+  const classes = useStyles()
+
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
+      <Grid container direction="row" className={classes.fullHeight}>
+        <Grid container item xs={2} sm={3} direction="column" justify="center" alignContent="center">
+          <ContactBar />
+        </Grid>
+        <Grid item xs={10} sm={9}>
+
+        </Grid>
+      </Grid>
       <Router>
         <div>
-          <Typography variant="h1" component="header" color="textPrimary">Hello World!</Typography>
           <Switch>
             <Route path="/about">
               <About />

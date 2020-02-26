@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Link as RouterLink } from 'react-router-dom'
 import {
+  Paper,
   Grid,
   Link,
   Typography
@@ -9,11 +10,13 @@ import {
 
 const useStyles = makeStyles(theme => ({
   navbar: {
-    height: '10vh',
     width: '100%',
+    height: '8vh',
     position: 'fixed',
-    marginTop: '10px',
-    zIndex: 2
+    paddingTop: '10px',
+    paddingBottom: '10px',
+    zIndex: 2,
+    backgroundColor: '#282C34'
   },
 
 }))

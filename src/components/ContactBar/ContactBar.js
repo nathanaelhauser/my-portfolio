@@ -19,14 +19,14 @@ const useStyles = makeStyles({
   }
 })
 
-const SideBar = () => {
+const ContactBar = () => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       <Grid container spacing={2} direction="column" alignContent="center" justify="center">
         <Grid container item direction="row" justify="center" alignItems="center">
-          <Typography variant="subtitle1" component="body" color="secondary">Contact</Typography>
+          <Typography variant="subtitle1" component="p" color="secondary">Contact</Typography>
         </Grid>
         <Grid container item direction="row" justify="center" alignItems="center">
           <IconButton color="secondary" href="https://github.com/mesmerizingYeti">
@@ -53,4 +53,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default ContactBar

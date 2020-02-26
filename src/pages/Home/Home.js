@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     left: '0'
   },
   fullHeight: {
-    height: '-webkit-fill-available'
+    height: '-webkit-fill-available',
   },
   fadeContainer: {
     overflow: 'hidden'

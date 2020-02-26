@@ -71,7 +71,6 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <Router>
         <div>
-
           <CssBaseline />
           <NavBar />
           <Grid container direction="row" className={classes.fullHeight}>

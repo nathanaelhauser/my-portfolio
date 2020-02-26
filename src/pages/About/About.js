@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Typography,
-  Grid
+  Grid,
+  Grow
 } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -22,12 +23,22 @@ const useStyles = makeStyles(theme => ({
 
 const About = () => {
   const classes = useStyles()
+  const [grow, setGrow] = useState(false)
+
+  useEffect(() => {
+    setGrow(true)
+  }, [])
+
   return (
     <div className={classes.root}>
       <Grid container direction="column" justify="center" alignContent="center" className={classes.fullHeight}>
-        <div className={classes.fadeContainer}>
+        <Grow 
+          in={grow}
+          style={{ transformOrigin: '0 0 0' }}
+          {...(grow ? { timeout: 1000 } : {} )}
+        >
           <Typography variant='h1' component='header' color='textPrimary'>About</Typography>
-        </div>
+        </Grow>
       </Grid>
     </div>
   )

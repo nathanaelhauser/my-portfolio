@@ -5,10 +5,6 @@ import {
   Route
 } from 'react-router-dom'
 import {
-  AnimatedSwitch,
-  spring
-} from 'react-router-transition'
-import {
   createMuiTheme,
   responsiveFontSizes,
   MuiThemeProvider,
@@ -16,10 +12,6 @@ import {
 } from '@material-ui/core/styles'
 import {
   CssBaseline,
-  AppBar,
-  Breadcrumbs,
-  Link,
-  Typography,
   Grid
 } from '@material-ui/core'
 import {
@@ -27,6 +19,7 @@ import {
   Home,
   Portfolio
 } from './pages'
+import NavBar from './components/NavBar'
 import ContactBar from './components/ContactBar'
 import './assets/fonts/fonts.css'
 // import logo from './logo.svg'
@@ -71,52 +64,21 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-// Adding animation to route transitions
-
-const mapStyles = styles => ({
-  opacity: styles.opacity
-})
-
-const fade = value => spring(value, {
-  stiffness: 330,
-  damping: 22
-})
-
-const fadeTransition = {
-  atEnter: {
-    opacity: 0
-  },
-  atLeave: {
-    opacity: fade(0)
-  },
-  atActive: {
-    opacity: fade(1)
-  }
-}
-
 const App = () => {
   const classes = useStyles()
 
   return (
     <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Grid container direction="row" className={classes.fullHeight}>
-        <Grid container item xs={1} sm={1} direction="column" justify="center" alignContent="center">
-          <ContactBar />
-        </Grid>
-        <Grid item xs={11} sm={11}>
-          <Router>
-            <AnimatedSwitch
-              atEnter={fadeTransition.atEnter}
-              atLeave={fadeTransition.atLeave}
-              atActive={fadeTransition.atActive}
-              mapStyles={mapStyles}
-            >
-              <Route path="/about" component={About} />
-              <Route path="/portfolio" component={Portfolio} />
-              <Route exact path="/" component={Home} />
-            </AnimatedSwitch>
-            {/* <div>
+      <Router>
+        <div>
+
+          <CssBaseline />
+          <NavBar />
+          <Grid container direction="row" className={classes.fullHeight}>
+            <Grid container item xs={1} sm={1} direction="column" justify="center" alignContent="center">
+              <ContactBar />
+            </Grid>
+            <Grid item xs={11} sm={11}>
               <Switch>
                 <Route path="/about">
                   <About />
@@ -128,10 +90,10 @@ const App = () => {
                   <Home />
                 </Route>
               </Switch>
-            </div> */}
-          </Router>
-        </Grid>
-      </Grid>
+            </Grid>
+          </Grid>
+        </div>
+      </Router>
     </MuiThemeProvider>
   )
 }

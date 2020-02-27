@@ -24,7 +24,7 @@ const Portfolio = () => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Grid container direction="column" justify="center" alignContent="center" className={classes.fullHeight}>
+      <Grid container direction="column" justify="flex-start" alignContent="center" className={classes.fullHeight}>
         <div className={classes.fadeContainer}>
           <Typography variant='h1' component='header' color='textPrimary'>Portfolio</Typography>
         </div>

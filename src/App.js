@@ -106,6 +106,9 @@ const App = () => {
                   <Route path="/portfolio">
                     <Portfolio />
                   </Route>
+                  <Route path="/my-portfolio">
+                    <Home />
+                  </Route>
                   <Route exact path="/">
                     <Home />
                   </Route>

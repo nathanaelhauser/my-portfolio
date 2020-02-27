@@ -8,16 +8,9 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     height: '92vh',
-    width: '100%',
     marginTop: '8vh',
-    paddingLeft: '8%',
-    paddingRight: '8%',
-    position: 'relative',
-    left: '0',
-    [theme.breakpoints.down('xs')]: {
-      paddingLeft: '8%',
-      paddingRight: '0'
-    }
+    marginLeft: '20px',
+    overflow: 'hidden'
   },
   fullHeight: {
     height: '-webkit-fill-available',
@@ -40,7 +33,7 @@ const PlainAbout = props => {
 
   return (
     <div className={classes.root}>
-      <Grid container direction="column" justify="flex-start" alignContent="center" className={classes.fullHeight} wrap='nowrap'>
+      <Grid container direction="column" justify="flex-start" alignItems="center" className={classes.fullHeight} wrap='nowrap'>
         <Grid item xs={10} className={classes.centerText}>
           <Typography variant='h1' component='header' color='textPrimary'>About</Typography>
         </Grid>

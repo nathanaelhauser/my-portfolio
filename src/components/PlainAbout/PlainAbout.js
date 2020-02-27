@@ -4,7 +4,6 @@ import {
   Typography,
   Grid
 } from '@material-ui/core'
-import cardImg from './images/profile-pic.jpg'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,17 +35,17 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const PlainAbout = () => {
+const PlainAbout = props => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
-      <Grid container direction="column" justify="center" alignContent="center" className={classes.fullHeight} wrap='nowrap'>
+      <Grid container direction="column" justify="flex-start" alignContent="center" className={classes.fullHeight} wrap='nowrap'>
         <Grid item xs={10} className={classes.centerText}>
           <Typography variant='h1' component='header' color='textPrimary'>About</Typography>
         </Grid>
         <Grid container item xs={10} justify='center' alignContent='center' wrap='nowrap'>
-          <img src={cardImg} alt="me" className={classes.profilePicture} />
+          <img src={props.picture} alt="me" className={classes.profilePicture} />
         </Grid>
         <Grid item xs={10} className={classes.centerText}>
           <Typography variant='body1' component='span'>

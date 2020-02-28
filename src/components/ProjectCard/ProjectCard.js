@@ -1,31 +1,58 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import {
   Card,
-  CardMedia,
   CardContent,
   CardActions,
   CardHeader,
+  Typography,
+  Grid,
   IconButton
 } from '@material-ui/core'
 import { GithubCircle } from 'mdi-material-ui'
 import { DiHeroku } from 'react-icons/di'
 
+const useStyles = makeStyles(theme => ({
+  card: {
+    textAlign: 'center',
+    border: '2px solid #8AF3FF'
+  },
+  image: {
+    height: '60rem',
+    display: 'block',
+    [theme.breakpoints.down('xs')]: {
+      height: '20rem'
+    }
+  },
+  links: {
+    color: '#F7F0F0'
+  }
+}))
+
 const ProjectCard = props => {
+  const classes = useStyles()
+
   return (
-    <Card>
-      <CardHeader 
+    <Card className={classes.card}>
+      <CardHeader
         title={props.title}
       />
-      <CardMedia image={props.image} />
       <CardContent>
-        {props.children}
+        <Grid container direction="column" justify="flex-start" alignContent="center" spacing={1}>
+          <Grid container item justify="center">
+            <img src={props.image} alt={props.title} className={classes.image} />
+          </Grid>
+          <Typography variant="body1" component="span">
+            {props.description}
+          </Typography>
+        </Grid>
       </CardContent>
       <CardActions>
         <IconButton href={props.github} >
-          <GithubCircle />
+          <GithubCircle className={classes.links} />
         </IconButton>
         <IconButton href={props.heroku} >
-          <DiHeroku />
+          <DiHeroku className={classes.links} />
         </IconButton>
       </CardActions>
     </Card>

@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   profilePicture: {
     position: 'relative',
     boxShadow: '0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)',
-    borderRadius: '4px',
+    borderRadius: '4rem',
     [theme.breakpoints.down('sm')]: {
       width: '200px'
     }
@@ -53,7 +53,8 @@ const useStyles = makeStyles(theme => ({
     color: "#F7F0F0"
   },
   skillsGrid: {
-    marginTop: "5px"
+    marginTop: "5px",
+    marginRight: "10px"
   },
   cardIcon: {
     color: "#282C34",
@@ -79,13 +80,13 @@ const PlainAbout = props => {
       <Grid container direction="row" className={classes.fullHeight}>
 
         {/* About Picture and Text */}
-        <Grid item container direction="column" justify="flex-start" alignItems="center" wrap='nowrap'>
+        <Grid item container direction="column" justify="flex-start" alignItems="center" wrap='nowrap' spacing={2}>
           <Grid container item xs={10} justify='center' alignContent='center' wrap='nowrap'>
             <img src={props.picture} alt="me" className={classes.profilePicture} />
           </Grid>
           <Grid item xs={10} className={classes.centerText}>
             <Typography variant='body1' component='span'>
-              Full stack web developer bringing over 8 years of customer service into a technical career field. Skilled in html, css, javascript, swift, C++, and python and known for my patience, communication and ability to teach my coworkers. Passionate about learning and growing with each and every project. I want to help build technology that helps people live good and healthy lives. My past work experience gives me a good position to provide a good and workable UX. Enthused to leverage my experience and skills to help build team driven projects.
+            Full stack web developer bringing over eight years of customer service into a technical career field. Able to bridge client ideas with tangible work goals by incorporating my customer experience with my programming skills. Skilled in html, css, javascript, swift, C++, and python. Known for my patience, communication and organization which are exemplified by my team choosing me as SCRUM/Github master for our bootcamp projects. Helping my team members fix bugs and learn new frameworks was fun and challenging. Enthused to continue to build team-driven projects. I desire to learn and grow using my bootcamp certification as a first step.
             </Typography>
           </Grid>
         </Grid>

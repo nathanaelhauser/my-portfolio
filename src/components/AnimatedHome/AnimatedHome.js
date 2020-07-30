@@ -77,6 +77,7 @@ const AnimatedHome = () => {
           <Fade
             in={transition.firstLine}
             onEntered={() => setTransition({ ...transition, secondLineOne: true })}
+            {...(transition.firstLine ? { timeout: 3500 } : {})}
           >
             <Typography variant='body1' component='span' color='textSecondary' className={classes.centerText}>
               I'm a full-stack developer and I can create a MERN web app for you. But more importantly, I love to learn!
@@ -112,7 +113,7 @@ const AnimatedHome = () => {
             {...(transition.thirdLine ? { timeout: 1500 } : {})}
           >
             <Typography variant='body1' component='p' color='textSecondary' align="center">
-              Maybe you'll see something you like!
+              You'll definitely see something you like!
             </Typography>
           </Zoom>
         </Grid>

@@ -5,6 +5,7 @@ import {
   Grid
 } from '@material-ui/core'
 import ProjectCard from '../../components/ProjectCard'
+import TestProjectCard from '../../components/TestProjectCard'
 import cookieImage from './images/cookie_snapshot.png'
 import flakeImage from './images/flake_snapshot.png'
 import werkImage from './images/werk_snapshot.png'
@@ -66,7 +67,7 @@ const Portfolio = () => {
         {
           projects.map(project => (
             <Grid item xs={9}>
-              <ProjectCard 
+              <TestProjectCard 
                 {...project}
               />
             </Grid> 

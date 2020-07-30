@@ -61,7 +61,7 @@ const PlainHome = () => {
         </Grid>
         <Grid container item justify="center" alignContent="center" alignItems="center">
           <Typography variant='body1' component='p' color='textSecondary' align="center">
-            Maybe you'll see something you like!
+            You'll definitely see something you like!
           </Typography>
         </Grid>
       </Grid>

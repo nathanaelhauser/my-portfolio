@@ -1,1 +1,1 @@
-export { default } from './GridIcon'
+export { default } from './GridIcon';

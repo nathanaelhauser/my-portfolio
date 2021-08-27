@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 import {
   makeStyles,
   withStyles
-} from '@material-ui/core/styles'
+} from '@material-ui/core/styles';
 import {
   Grid,
   Card,
   CardContent,
   Tooltip
-} from '@material-ui/core'
+} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   gridItem: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignContent: 'center'
   }
-}))
+}));
 
 const LightTooltip = withStyles(theme => ({
   tooltip: {
@@ -31,10 +31,10 @@ const LightTooltip = withStyles(theme => ({
     boxShadow: theme.shadows[1],
     fontSize: 11,
   },
-}))(Tooltip)
+}))(Tooltip);
 
 const GridIcon = props => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Grid item lg={1} className={classes.gridItem}>
@@ -46,7 +46,7 @@ const GridIcon = props => {
         </Card>
       </LightTooltip>
     </Grid>
-  )
-}
+  );
+};
 
-export default GridIcon
+export default GridIcon;

@@ -1,1 +1,1 @@
-export { default } from './PagesContext'
+export { default } from './PagesContext';

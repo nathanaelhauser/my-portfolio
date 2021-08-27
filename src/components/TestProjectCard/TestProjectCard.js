@@ -1,5 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Card,
   CardMedia,
@@ -9,9 +9,9 @@ import {
   Typography,
   Grid,
   IconButton
-} from '@material-ui/core'
-import { GithubCircle } from 'mdi-material-ui'
-import { DiHeroku } from 'react-icons/di'
+} from '@material-ui/core';
+import { GithubCircle } from 'mdi-material-ui';
+import { DiHeroku } from 'react-icons/di';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -37,10 +37,10 @@ const useStyles = makeStyles(theme => ({
   links: {
     color: '#F7F0F0'
   }
-}))
+}));
 
 const TestProjectCard = props => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Card className={classes.card}>
@@ -74,7 +74,7 @@ const TestProjectCard = props => {
         </IconButton>
       </CardActions> */}
     </Card>
-  )
-}
+  );
+};
 
-export default TestProjectCard
+export default TestProjectCard;

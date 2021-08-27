@@ -1,1 +1,1 @@
-export { default } from './AnimatedHome'
+export { default } from './AnimatedHome';

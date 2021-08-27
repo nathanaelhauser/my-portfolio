@@ -1,11 +1,11 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Link as RouterLink } from 'react-router-dom'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   Grid,
   Link,
   Typography
-} from '@material-ui/core'
+} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   navbar: {
@@ -16,12 +16,11 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: '10px',
     zIndex: 2,
     backgroundColor: '#282C34'
-  },
-
-}))
+  }
+}));
 
 const NavBar = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.navbar}>
@@ -43,7 +42,7 @@ const NavBar = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

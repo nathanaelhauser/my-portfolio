@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import PagesContext from '../../utils/PagesContext'
-import PlainHome from '../../components/PlainHome'
-import AnimatedHome from '../../components/AnimatedHome'
+import React, { useContext } from 'react';
+import PagesContext from '../../utils/PagesContext';
+import PlainHome from '../../components/PlainHome';
+import AnimatedHome from '../../components/AnimatedHome';
 
 const Home = () => {
-  const { homeVisited } = useContext(PagesContext)
+  const { homeVisited } = useContext(PagesContext);
 
-  return (homeVisited ? <PlainHome /> : <AnimatedHome />)
+  return (homeVisited ? <PlainHome /> : <AnimatedHome />);
 }
 
-export default Home
+export default Home;

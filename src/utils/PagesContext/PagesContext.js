@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext } from 'react';
 
 const PagesContext = createContext({
   homeVisited: false,
@@ -7,6 +7,6 @@ const PagesContext = createContext({
   toggleHome: () => {},
   toggleAbout: () => {},
   togglePortfolio: () => {}
-})
+});
 
-export default PagesContext
+export default PagesContext;

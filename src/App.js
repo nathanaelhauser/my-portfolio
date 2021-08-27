@@ -1,28 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
 import {
   createMuiTheme,
   responsiveFontSizes,
   MuiThemeProvider,
   makeStyles
-} from '@material-ui/core/styles'
+} from '@material-ui/core/styles';
 import {
   CssBaseline,
   Grid
-} from '@material-ui/core'
+} from '@material-ui/core';
 import {
   About,
   Home,
   Portfolio
-} from './pages'
-import NavBar from './components/NavBar'
-import ContactBar from './components/ContactBar'
-import PagesContext from './utils/PagesContext'
-import './assets/fonts/fonts.css'
+} from './pages';
+import NavBar from './components/NavBar';
+import ContactBar from './components/ContactBar';
+import PagesContext from './utils/PagesContext';
+import './assets/fonts/fonts.css';
 // import logo from './logo.svg'
 
 // MUI Theme for app
@@ -54,8 +54,8 @@ let theme = createMuiTheme({
   typography: {
     'fontFamily': "\"Roboto Condensed\""
   }
-})
-theme = responsiveFontSizes(theme)
+});
+theme = responsiveFontSizes(theme);
 
 // Style to ensure full page height is used
 
@@ -63,19 +63,25 @@ const useStyles = makeStyles(theme => ({
   fullHeight: {
     height: '-webkit-fill-available'
   },
-}))
+}));
 
 const App = () => {
-  const classes = useStyles()
+  const classes = useStyles();
   const [pagesState, setPagesState] = useState({
     homeVisited: false,
     aboutVisited: false,
     portfolioVisited: false
-  })
+  });
 
-  pagesState.toggleHome = () => setPagesState({ ...pagesState, homeVisited: !pagesState.homeVisited })
-  pagesState.toggleAbout = () => setPagesState({ ...pagesState, aboutVisited: !pagesState.aboutVisited })
-  pagesState.togglePortfolio = () => setPagesState({ ...pagesState, portfolioVisited: !pagesState.portfolioVisited })
+  pagesState.toggleHome = () => setPagesState(oldState => 
+    ({ ...oldState, homeVisited: !oldState.homeVisited })
+  );
+  pagesState.toggleAbout = () => setPagesState(oldState =>
+    ({ ...oldState, aboutVisited: !oldState.aboutVisited })
+  );
+  pagesState.togglePortfolio = () => setPagesState(oldState =>
+    ({ ...oldState, portfolioVisited: !oldState.portfolioVisited })
+  );
 
   return (
     <MuiThemeProvider theme={theme}>

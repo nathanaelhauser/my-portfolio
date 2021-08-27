@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React, { useEffect, useState, useContext } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Grid,
   Collapse,
   Divider
-} from '@material-ui/core'
+} from '@material-ui/core';
 import {
   LanguageCpp,
   LanguageJava,
@@ -16,15 +16,15 @@ import {
   LanguagePhp,
   React as LanguageReact,
   Nodejs
-} from 'mdi-material-ui'
+} from 'mdi-material-ui';
 import {
   DiDart,
   DiHtml5,
   DiMongodb,
   DiMysql
-} from 'react-icons/di'
-import GridIcon from '../GridIcon'
-import PagesContext from '../../utils/PagesContext'
+} from 'react-icons/di';
+import GridIcon from '../GridIcon';
+import PagesContext from '../../utils/PagesContext';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -61,16 +61,16 @@ const useStyles = makeStyles(theme => ({
     color: "#282C34",
     fontSize: '3rem'
   }
-}))
+}));
 
 const AnimatedAbout = props => {
-  const classes = useStyles()
-  const [collapse, setCollapse] = useState(false)
-  const { toggleAbout } = useContext(PagesContext)
+  const classes = useStyles();
+  const [collapse, setCollapse] = useState(false);
+  const { toggleAbout } = useContext(PagesContext);
 
   useEffect(() => {
     setCollapse(true)
-  }, [])
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -147,7 +147,7 @@ const AnimatedAbout = props => {
       </Grid>
       </Collapse>
     </div>
-  )
-}
+  );
+};
 
-export default AnimatedAbout
+export default AnimatedAbout;

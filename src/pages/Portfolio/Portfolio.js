@@ -1,14 +1,14 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Grid
-} from '@material-ui/core'
-import ProjectCard from '../../components/ProjectCard'
-import TestProjectCard from '../../components/TestProjectCard'
-import cookieImage from './images/cookie_snapshot.png'
-import flakeImage from './images/flake_snapshot.png'
-import werkImage from './images/werk_snapshot.png'
+} from '@material-ui/core';
+import ProjectCard from '../../components/ProjectCard';
+import TestProjectCard from '../../components/TestProjectCard';
+import cookieImage from './images/cookie_snapshot.png';
+import flakeImage from './images/flake_snapshot.png';
+import werkImage from './images/werk_snapshot.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,10 +23,10 @@ const useStyles = makeStyles(theme => ({
   fullHeight: {
     height: '-webkit-fill-available',
   }
-}))
+}));
 
 const Portfolio = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   const projects = [
     {
@@ -50,7 +50,7 @@ const Portfolio = () => {
       heroku: 'https://fathomless-forest-35789.herokuapp.com/',
       description: `WERK is a full stack MERN application that lets users create a WERK account and create their own workouts or generate random workouts using exercises that the app offers. Users are able navigate between several pages throughout the app. The Home page gives them the ability to quickstart (which will generate a random workout) or create a custom workout (which allows the user to build their own workout). The Custom and Quickstart tabs go to those two pages. The Exercises page gives a list of all the exercises offered by the app. And the About page gives some info on the lovely developers. Listed on the Profile tab is the user's information and their saved workouts.`
     }
-  ]
+  ];
 
   return (
     <div className={classes.root}>
@@ -75,7 +75,7 @@ const Portfolio = () => {
         }
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

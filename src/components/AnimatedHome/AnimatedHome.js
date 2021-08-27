@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React, { useEffect, useState, useContext } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Grid,
@@ -7,8 +7,8 @@ import {
   Zoom,
   Slide,
   Fade
-} from '@material-ui/core'
-import PagesContext from '../../utils/PagesContext'
+} from '@material-ui/core';
+import PagesContext from '../../utils/PagesContext';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,10 +26,10 @@ const useStyles = makeStyles(theme => ({
   centerText: {
     textAlign: 'center'
   }
-}))
+}));
 
 const AnimatedHome = () => {
-  const classes = useStyles()
+  const classes = useStyles();
   const [transition, setTransition] = useState({
     greeting: true,
     name: false,
@@ -37,12 +37,12 @@ const AnimatedHome = () => {
     secondLineOne: false,
     secondLineTwo: false,
     thirdLine: false
-  })
-  const { toggleHome } = useContext(PagesContext)
+  });
+  const { toggleHome } = useContext(PagesContext);
 
   useEffect(() => {
     setTransition({ ...transition, greeting: true })
-  }, [])
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -119,7 +119,7 @@ const AnimatedHome = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default AnimatedHome
+export default AnimatedHome;

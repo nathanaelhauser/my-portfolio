@@ -1,1 +1,1 @@
-export { default } from './PlainHome'
+export { default } from './PlainHome';

@@ -1,14 +1,14 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Grid,
   Typography,
   IconButton
-} from '@material-ui/core'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import EmailIcon from '@material-ui/icons/Email'
+} from '@material-ui/core';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import EmailIcon from '@material-ui/icons/Email';
 
 const useStyles = makeStyles({
   root: {
@@ -17,10 +17,10 @@ const useStyles = makeStyles({
     zIndex: 1,
     marginLeft: '10px'
   }
-})
+});
 
 const ContactBar = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -50,7 +50,7 @@ const ContactBar = () => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default ContactBar
+export default ContactBar;

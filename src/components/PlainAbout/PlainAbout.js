@@ -1,10 +1,10 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Grid,
   Divider
-} from '@material-ui/core'
+} from '@material-ui/core';
 import {
   LanguageCpp,
   LanguageJava,
@@ -15,14 +15,14 @@ import {
   LanguagePhp,
   React as LanguageReact,
   Nodejs
-} from 'mdi-material-ui'
+} from 'mdi-material-ui';
 import {
   DiDart,
   DiHtml5,
   DiMongodb,
   DiMysql
-} from 'react-icons/di'
-import GridIcon from '../GridIcon'
+} from 'react-icons/di';
+import GridIcon from '../GridIcon';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,10 +63,10 @@ const useStyles = makeStyles(theme => ({
       fontSize: '2rem'
     }
   }
-}))
+}));
 
 const PlainAbout = props => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -139,7 +139,7 @@ const PlainAbout = props => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default PlainAbout
+export default PlainAbout;
